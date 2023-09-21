@@ -35,7 +35,9 @@ is_robot(turel). % роботы которые стреляют лазерами
 has_intelligence(turel).
 is_weapon(turel). 
 is_weapon(laser).
-has_laser(turel).
+is_weapon(gun).
+can_use(turel, gun).
+can_use(turel, laser).
 
 can_kick(chell, turel). % Можно пнуть турель, тогда она свалиться и будет 'Aaa...'
 
@@ -62,7 +64,6 @@ is_panel(aerial_faith_plate). % Специальная панель, котор�
 can_soar(chell, aerial_faith_plate).
 
 is_bridge(light_bridge). % Летающий световой мост по которому Челл может пройти
-is_shield(light_bridge, laser). % Мост защищает от лазеров
 
 % Воздущный мост, который может перемещать человека, роботов и предметы
 is_bridge(air_bridge).
@@ -90,18 +91,13 @@ can_shoot(portal_gun, moon).
 can_shoot(turel, chell).
 
 contains_key([]):- false.
+contains_key([X]):- is_key(X).
 contains_key([X:XS]):-
     is_key(X);
     contains_key(XS).
 
 % Правило прохождения уровня
 
-pass_level(HUMAN, ENVIRONMENT):-
-    not(is_dead(HUMAN)),
-    contains_key(ENVIRONMENT);
-    open_portals(ENVIRONMENT);
-    move_bridges(ENVIRONMENT);
-    remove_turels(ENVIRONMENT);
-    use_shields(ENVIRONMENT).
-
-% Правило захвата объекта
+pass_level(H, [E]):-
+    not(is_dead(H)),
+    contains_key([E]).
