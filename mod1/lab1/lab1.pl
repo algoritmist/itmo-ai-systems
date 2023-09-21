@@ -98,6 +98,11 @@ contains_key([X:XS]):-
 
 % Правило прохождения уровня
 
-pass_level(H, [E]):-
+pass_level(H, E):-
     not(is_dead(H)),
-    contains_key([E]).
+    contains_key(E).
+
+pass_game(E):-
+    member(portal_gun, E),
+    member(wheatley, E),
+    member(moon, E).
