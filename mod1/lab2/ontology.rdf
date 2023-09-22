@@ -15,6 +15,126 @@
     <!-- 
     ///////////////////////////////////////////////////////////////////////////////////////
     //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#canShoot -->
+
+    <owl:ObjectProperty rdf:about="http://www.co-ode.org/ontologies/ont.owl#canShoot">
+        <rdfs:subPropertyOf rdf:resource="http://www.co-ode.org/ontologies/ont.owl#isWeapon"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#hasIntelligence -->
+
+    <owl:ObjectProperty rdf:about="http://www.co-ode.org/ontologies/ont.owl#hasIntelligence">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Human"/>
+        <rdfs:domain rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Robot"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#hasKey -->
+
+    <owl:ObjectProperty rdf:about="http://www.co-ode.org/ontologies/ont.owl#hasKey">
+        <rdfs:domain rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Human"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#hasWeapon -->
+
+    <owl:ObjectProperty rdf:about="http://www.co-ode.org/ontologies/ont.owl#hasWeapon">
+        <rdfs:domain rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Human"/>
+        <rdfs:domain rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Robot"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#isAlive -->
+
+    <owl:ObjectProperty rdf:about="http://www.co-ode.org/ontologies/ont.owl#isAlive">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <owl:inverseOf rdf:resource="http://www.co-ode.org/ontologies/ont.owl#isDead"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#isDead -->
+
+    <owl:ObjectProperty rdf:about="http://www.co-ode.org/ontologies/ont.owl#isDead">
+        <rdfs:domain rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Human"/>
+        <rdfs:domain rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Robot"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#isIdiot -->
+
+    <owl:ObjectProperty rdf:about="http://www.co-ode.org/ontologies/ont.owl#isIdiot">
+        <rdfs:subPropertyOf rdf:resource="http://www.co-ode.org/ontologies/ont.owl#hasIntelligence"/>
+        <owl:inverseOf rdf:resource="http://www.co-ode.org/ontologies/ont.owl#isIdiot"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#isSmart -->
+
+    <owl:ObjectProperty rdf:about="http://www.co-ode.org/ontologies/ont.owl#isSmart">
+        <rdfs:subPropertyOf rdf:resource="http://www.co-ode.org/ontologies/ont.owl#hasIntelligence"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#isSoaring -->
+
+    <owl:ObjectProperty rdf:about="http://www.co-ode.org/ontologies/ont.owl#isSoaring">
+        <rdfs:domain rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Human"/>
+        <rdfs:domain rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Key"/>
+        <rdfs:domain rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Robot"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#isWeapon -->
+
+    <owl:ObjectProperty rdf:about="http://www.co-ode.org/ontologies/ont.owl#isWeapon">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Weapon"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#name -->
+
+    <owl:DatatypeProperty rdf:about="http://www.co-ode.org/ontologies/ont.owl#name">
+        <rdfs:domain rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Human"/>
+        <rdfs:domain rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Robot"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
     // Classes
     //
     ///////////////////////////////////////////////////////////////////////////////////////
@@ -23,23 +143,11 @@
     
 
 
-    <!-- http://www.co-ode.org/ontologies/ont.owl#AI -->
-
-    <owl:Class rdf:about="http://www.co-ode.org/ontologies/ont.owl#AI"/>
-    
-
-
     <!-- http://www.co-ode.org/ontologies/ont.owl#Box -->
 
     <owl:Class rdf:about="http://www.co-ode.org/ontologies/ont.owl#Box">
         <rdfs:subClassOf rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Key"/>
     </owl:Class>
-    
-
-
-    <!-- http://www.co-ode.org/ontologies/ont.owl#Bridge -->
-
-    <owl:Class rdf:about="http://www.co-ode.org/ontologies/ont.owl#Bridge"/>
     
 
 
@@ -61,29 +169,11 @@
     
 
 
-    <!-- http://www.co-ode.org/ontologies/ont.owl#Level -->
-
-    <owl:Class rdf:about="http://www.co-ode.org/ontologies/ont.owl#Level"/>
-    
-
-
     <!-- http://www.co-ode.org/ontologies/ont.owl#Man -->
 
     <owl:Class rdf:about="http://www.co-ode.org/ontologies/ont.owl#Man">
         <rdfs:subClassOf rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Human"/>
     </owl:Class>
-    
-
-
-    <!-- http://www.co-ode.org/ontologies/ont.owl#Panel -->
-
-    <owl:Class rdf:about="http://www.co-ode.org/ontologies/ont.owl#Panel"/>
-    
-
-
-    <!-- http://www.co-ode.org/ontologies/ont.owl#Planet -->
-
-    <owl:Class rdf:about="http://www.co-ode.org/ontologies/ont.owl#Planet"/>
     
 
 
@@ -104,6 +194,95 @@
     <owl:Class rdf:about="http://www.co-ode.org/ontologies/ont.owl#Woman">
         <rdfs:subClassOf rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Human"/>
     </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#BlueGel -->
+
+    <owl:NamedIndividual rdf:about="http://www.co-ode.org/ontologies/ont.owl#BlueGel"/>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#Box -->
+
+    <owl:NamedIndividual rdf:about="http://www.co-ode.org/ontologies/ont.owl#Box"/>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#Caroline -->
+
+    <owl:NamedIndividual rdf:about="http://www.co-ode.org/ontologies/ont.owl#Caroline"/>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#Chell -->
+
+    <owl:NamedIndividual rdf:about="http://www.co-ode.org/ontologies/ont.owl#Chell"/>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#GLaDOS -->
+
+    <owl:NamedIndividual rdf:about="http://www.co-ode.org/ontologies/ont.owl#GLaDOS"/>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#GrayGel -->
+
+    <owl:NamedIndividual rdf:about="http://www.co-ode.org/ontologies/ont.owl#GrayGel"/>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#Jonson -->
+
+    <owl:NamedIndividual rdf:about="http://www.co-ode.org/ontologies/ont.owl#Jonson"/>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#LaserBox -->
+
+    <owl:NamedIndividual rdf:about="http://www.co-ode.org/ontologies/ont.owl#LaserBox"/>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#LightBridge -->
+
+    <owl:NamedIndividual rdf:about="http://www.co-ode.org/ontologies/ont.owl#LightBridge"/>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#RedGel -->
+
+    <owl:NamedIndividual rdf:about="http://www.co-ode.org/ontologies/ont.owl#RedGel"/>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#Turel -->
+
+    <owl:NamedIndividual rdf:about="http://www.co-ode.org/ontologies/ont.owl#Turel"/>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#TurelBox -->
+
+    <owl:NamedIndividual rdf:about="http://www.co-ode.org/ontologies/ont.owl#TurelBox"/>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#Wheatley -->
+
+    <owl:NamedIndividual rdf:about="http://www.co-ode.org/ontologies/ont.owl#Wheatley"/>
 </rdf:RDF>
 
 

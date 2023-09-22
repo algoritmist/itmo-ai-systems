@@ -1,14 +1,21 @@
 % База знаний по игре Portal 2
 
+
+
+
 is_woman(chell).  % главный герой в одиночном режиме
-is_subject(chell). % Челл испытуемая в лаборатории
+is_woman(caroline). % асистентка Джонсона
 
 is_man(jonson). % ученый, основатель лаборатории
 is_scientist(jonson).
+
+:- dynamic is_dead/1.
 is_dead(jonson).
-is_woman(caroline). % асистентка Джонсона
 is_dead(caroline).
 
+
+
+:- dynamic is_human/1 
 is_human(H) :-
     is_man(H);
     is_woman(H).
@@ -75,11 +82,11 @@ can_move(air_bridge, S):-
 
 
 % Правило захвата объекта
-can_capture(chell, portal_gun).
 can_capture(H, O):-
     is_human(H),
     not(is_dead(H)),
     is_robot(O);
+    is_weapon(O);
     is_key(O).
 
 % Правило открытия порталов
