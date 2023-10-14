@@ -15,7 +15,7 @@ is_dead(caroline).
 
 
 
-:- dynamic is_human/1 
+%:- dynamic is_human/1 
 is_human(H) :-
     is_man(H);
     is_woman(H).
